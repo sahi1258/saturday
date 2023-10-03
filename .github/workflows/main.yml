@@ -1,17 +1,25 @@
-name: Every Repo Workflow
+name: My GitHub Actions Workflow
 
 on:
   push:
     branches:
-      - main # Change this to the branch you want to trigger the workflow on
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
     - name: Checkout code
       uses: actions/checkout@v2
+
+    # ... other steps ...
+
       
     - name: Run a script from the repository
       run: |
